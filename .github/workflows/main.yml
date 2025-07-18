@@ -14,9 +14,10 @@ jobs:
             - run: echo "Enviar a Imagem Docker para o Docker Hub"
 
     CD:
+        needs: [CI]
         runs-on: ubuntu-latest
         
-        steps:
+        steps: 
             - run: echo "Obter o código"
             - run: echo "Configurar o Kubeconfig"
             - run: echo "Executar o apply"
